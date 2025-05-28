@@ -1,0 +1,90 @@
+Sales Prediction Model
+======================
+
+Overview
+
+This repository contains a sales prediction model designed to forecast future sales using historical data. The project includes a main application script, a Jupyter Notebook for model development and experimentation, as well as pre-trained preprocessing objects like encoders and scalers.
+
+Project Components:
+- app.py: The main application file that runs the sales prediction.
+- model.ipynb: A Jupyter Notebook that details the model training, testing, and evaluation.
+- encoders.pkl: A serialized file containing encoder objects for categorical features.
+- scaler.pkl: A serialized scaler used to normalize numerical features.
+- requirements.txt: A list of Python dependencies required to run the project.
+- .gitignore: Specifies files and directories (such as virtual environment folders) that should be ignored by Git.
+
+Repository Structure
+--------------------
+.  
+├── .gitignore  
+├── app.py  
+├── model.ipynb  
+├── encoders.pkl  
+├── scaler.pkl  
+└── requirements.txt  
+
+Setup and Installation
+------------------------
+Prerequisites:
+- Python 3.7 or later
+- pip (Python package installer)
+- Virtualenv (recommended)
+
+Clone the Repository:
+1. Open a terminal and run:
+   git clone <repository-url>
+   cd <repository-directory>
+
+Create and Activate a Virtual Environment:
+1. To create a virtual environment named "env", run:
+   python -m venv env
+
+2. Activate the virtual environment:
+   - On Windows (Command Prompt):
+     env\Scripts\activate
+     
+   - On Windows (PowerShell):
+     .\env\Scripts\Activate.ps1
+     
+   - On macOS/Linux:
+     source env/bin/activate
+
+Install Dependencies:
+1. Once the virtual environment is activated, install the required packages:
+   pip install -r requirements.txt
+
+Usage
+
+Running the Sales Prediction Application:
+1. The main application is contained in app.py.
+2. To run the application, execute:
+   python app.py
+   
+   The application will:
+   - Load the pre-trained encoders (encoders.pkl) and scaler (scaler.pkl).
+   - Read and preprocess the input sales data (ensure your data is formatted as expected).
+   - Predict and output sales forecasts.
+
+Exploring and Modifying the Model:
+1. Open the model.ipynb Jupyter Notebook.
+2. Run through the notebook to review the steps for data preprocessing, model training, and evaluation.
+3. Feel free to modify the code cells to experiment with different features or models.
+
+To launch the Jupyter Notebook interface:
+   jupyter notebook model.ipynb
+
+Data Considerations
+Ensure your sales dataset is in the appropriate format with correct naming conventions. If needed, adjust the input pipeline (e.g., file paths or column names) within app.py and model.ipynb.
+
+Below is one way you could rephrase the deployment disclaimer for your Sales Prediction App, highlighting that it utilizes Streamlit instead of AWS
+
+
+##Deployment Disclaimer##
+
+The original project requirements called for deploying the web application on AWS. For the Sales Prediction App, I built the model and initially deployed it on an AWS EC2 instance. However, recurring stability issues—such as frequent shutdowns and restarts—caused service interruptions.
+However, to ensure a reliable, accessible, and seamless user experience, I redeployed the application on Streamlit, a cloud platform that provides free and stable hosting for web applications. This change has allowed the app to fully meet all project requirements while maintaining smooth functionality in data processing and sales predictions.
+
+All key features, including the Streamlit-based UI and underlying analytics, remain fully aligned with the project goals.
+
+Run this URL to see the deployed application:  
+https://businessmodel.streamlit.app/
