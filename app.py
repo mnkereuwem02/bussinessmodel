@@ -8,25 +8,25 @@ model = joblib.load("model.pkl")
 scaler = joblib.load("scaler.pkl")
 label_encoders = joblib.load("encoders.pkl")  # dictionary of LabelEncoders
 
+state_cities ={'Florida': ['Miami', 'Orlando', 'Tampa'], 'Illinois': ['Chicago', 'Springfield', 'Peoria'], 
+ 'New York': ['Buffalo', 'New York City', 'Rochester'], 'California': ['Los Angeles', 'San Diego', 'San Francisco'], 
+ 'Texas': ['Dallas', 'Austin', 'Houston'], 'Ohio': ['Columbus', 'Cincinnati', 'Cleveland']}
+
+Cat_sub= {'Electronics': ['Electronic Games', 'Printers', 'Laptops', 'Phones'], 
+ 'Office Supplies': ['Pens', 'Markers', 'Paper', 'Binders'],
+ 'Furniture': ['Tables', 'Chairs', 'Sofas', 'Bookcases']}
+
 st.title("Sales Profit Prediction App")
 
 # Input widgets
 amount = st.number_input("Amount", min_value=0)
 quantity = st.number_input("Quantity", min_value=1)
 
-category = st.selectbox("Category", ['Electronics', 'Office Supplies', 'Furniture'])
-sub_category = st.selectbox("Sub-Category", [
-    'Electronic Games', 'Printers', 'Pens', 'Laptops', 'Tables',
-    'Chairs', 'Markers', 'Sofas', 'Paper', 'Binders', 'Phones', 'Bookcases'
-])
+category = st.selectbox("Category", list(Cat_sub.keys()))
+sub_category = st.selectbox("Sub-Category", Cat_sub[category])
 payment_mode = st.selectbox("Payment Mode", ['UPI', 'Debit Card', 'EMI', 'Credit Card', 'COD'])
-state = st.selectbox("State", ['Florida', 'Illinois', 'New York', 'California', 'Texas', 'Ohio'])
-city = st.selectbox("City", [
-    'Miami', 'Chicago', 'Buffalo', 'Orlando', 'Los Angeles',
-    'New York City', 'Springfield', 'Rochester', 'Dallas', 'San Diego',
-    'Austin', 'San Francisco', 'Columbus', 'Cincinnati', 'Cleveland',
-    'Houston', 'Tampa', 'Peoria'
-])
+state = st.selectbox("State", list(state_cities.keys()))
+city = st.selectbox("City", state_cities[state])
 order_month = st.selectbox("Order Month", list(range(1, 13)))
 order_year = st.selectbox("Order Year", [i for i in range(2020, 2051)])
 
