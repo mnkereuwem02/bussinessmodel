@@ -1,4 +1,4 @@
-Sales Prediction Model
+Sales Profit Prediction Model
 ======================
 
 Overview
