@@ -87,4 +87,4 @@ However, to ensure a reliable, accessible, and seamless user experience, I redep
 All key features, including the Streamlit-based UI and underlying analytics, remain fully aligned with the project goals.
 
 Run this URL to see the deployed application:  
-https://businessmodel.streamlit.app/
+https://bussinessmodel.streamlit.app/
