@@ -21,7 +21,6 @@ Repository Structure
 ├── model.ipynb  
 ├── encoders.pkl  
 ├── scaler.pkl
-|-- elasticity_model.pkl
 └── requirements.txt  
 
 Setup and Installation
