@@ -20,7 +20,8 @@ Repository Structure
 ├── app.py  
 ├── model.ipynb  
 ├── encoders.pkl  
-├── scaler.pkl  
+├── scaler.pkl
+|-- elasticity_model.pkl
 └── requirements.txt  
 
 Setup and Installation
