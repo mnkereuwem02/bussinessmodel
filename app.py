@@ -12,7 +12,6 @@ import streamlit as st
 model = joblib.load('model.pkl')
 scaler = joblib.load('scaler.pkl')
 label_encoders = joblib.load('encoders.pkl')
-elasticity_model = joblib.load('elasticity_model.pkl')
 
 def encode_feature(feature_name, value):
     try:
