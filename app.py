@@ -157,22 +157,4 @@ elif operation == "Optimize Pricing":
         st.write("Candidate Price Results:")
         st.dataframe(pd.DataFrame(candidate_results))
         
-        
-    elif operation == "Elasticity Analysis":
-        st.header("Elasticity Analysis")
-        st.write("This section uses an elasticity model (a log-log regression) to show how percentage changes in price "
-             "affect the percentage change in quantity demanded.")
-
-    # Input for price change percentage
-    price_change_pct = st.number_input("Price Change (%)", value=0.0, step=0.1)
-
-    if st.button("Compute Elasticity Impact"):
-        try:
-        # Retrieving elasticity coefficient from my model
-            elasticity_coefficient = elasticity_model.params["log_Price"]
-        # Computing the estimated percentage change in quantity
-            estimated_change_in_qty_pct = elasticity_coefficient * price_change_pct
-            st.success(f"A {price_change_pct:.2f}% change in price is estimated to lead to a "
-                   f"{estimated_change_in_qty_pct:.2f}% change in quantity demanded.")
-        except Exception as e:
-            st.error(f"Error retrieving elasticity coefficient: {e}")
+    
